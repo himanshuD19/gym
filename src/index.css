@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  @apply bg-primary text-white font-sans;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-primary;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-accent;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-green-400;
+}
+
+/* Utility Classes */
+@layer components {
+  .btn-primary {
+    @apply bg-accent text-black font-bold px-8 py-3 rounded-md hover:bg-green-400 transition-all duration-300 transform hover:scale-105;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent border-2 border-accent text-accent font-bold px-8 py-3 rounded-md hover:bg-accent hover:text-black transition-all duration-300;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-heading font-bold mb-4 text-center;
+  }
+
+  .section-subtitle {
+    @apply text-gray-400 text-center max-w-2xl mx-auto mb-12;
+  }
+
+  .card {
+    @apply bg-secondary rounded-lg p-6 hover:shadow-2xl transition-all duration-300;
+  }
+
+  .input-field {
+    @apply w-full bg-secondary border border-gray-700 rounded-md px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Loading Skeleton */
+.skeleton {
+  @apply bg-gray-800 animate-pulse rounded;
+}
+
+/* Toast Notification */
+.toast {
+  @apply fixed top-20 right-4 bg-accent text-black px-6 py-4 rounded-lg shadow-lg z-50 font-semibold;
+  animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Gradient Text */
+.gradient-text {
+  @apply bg-gradient-to-r from-accent to-green-400 bg-clip-text text-transparent;
+}
+
+/* Hero Background Overlay */
+.hero-overlay {
+  @apply absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-primary;
+}
