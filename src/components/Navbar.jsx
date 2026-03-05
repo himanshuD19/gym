@@ -34,18 +34,18 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full ${
         isScrolled ? 'bg-primary/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
       }`}
     >
       <div className="container-custom">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
-            <FaDumbbell className="text-accent text-3xl group-hover:rotate-180 transition-transform duration-500" />
+            <FaDumbbell className="text-accent text-2xl md:text-3xl group-hover:rotate-180 transition-transform duration-500" />
             <div>
-              <h1 className="text-2xl font-heading font-bold text-white">NLF</h1>
-              <p className="text-xs text-accent -mt-1">Next Level Fitness</p>
+              <h1 className="text-xl md:text-2xl font-heading font-bold text-white">NLF</h1>
+              <p className="text-xs text-accent -mt-1 hidden sm:block">Next Level Fitness</p>
             </div>
           </Link>
 

@@ -23,7 +23,7 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
         >
           <motion.h1
-            className="text-5xl md:text-7xl lg:text-8xl font-heading font-black text-white mb-6"
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-heading font-black text-white mb-6 px-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -33,7 +33,7 @@ const Hero = () => {
           </motion.h1>
 
           <motion.p
-            className="text-xl md:text-2xl text-gray-300 mb-4 max-w-2xl mx-auto"
+            className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-4 max-w-2xl mx-auto px-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -42,7 +42,7 @@ const Hero = () => {
           </motion.p>
 
           <motion.p
-            className="text-lg text-gray-400 mb-12 max-w-3xl mx-auto"
+            className="text-base sm:text-lg text-gray-400 mb-12 max-w-3xl mx-auto px-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -65,21 +65,6 @@ const Hero = () => {
           </motion.div>
         </motion.div>
 
-        {/* Scroll Indicator */}
-        <motion.div
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.2 }}
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="text-accent text-3xl"
-          >
-            ↓
-          </motion.div>
-        </motion.div>
       </div>
     </section>
   );

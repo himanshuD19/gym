@@ -21,7 +21,7 @@ const TestimonialSlider = ({ testimonials }) => {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <div className="relative max-w-4xl mx-auto">
+    <div className="relative max-w-4xl mx-auto px-4 md:px-12">
       <AnimatePresence mode="wait">
         <motion.div
           key={currentIndex}
@@ -33,7 +33,7 @@ const TestimonialSlider = ({ testimonials }) => {
         >
           <FaQuoteLeft className="text-accent text-4xl mx-auto mb-6 opacity-50" />
           
-          <p className="text-gray-300 text-lg mb-6 italic">"{currentTestimonial.content}"</p>
+          <p className="text-gray-300 text-base md:text-lg mb-6 italic px-2">"{currentTestimonial.content}"</p>
 
           <div className="flex justify-center mb-4">
             {[...Array(currentTestimonial.rating)].map((_, i) => (
@@ -55,16 +55,16 @@ const TestimonialSlider = ({ testimonials }) => {
         </motion.div>
       </AnimatePresence>
 
-      {/* Navigation Buttons */}
+      {/* Navigation Buttons - Hidden on mobile, shown on desktop */}
       <button
         onClick={prevTestimonial}
-        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 bg-accent text-black p-3 rounded-full hover:bg-green-400 transition-colors"
+        className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 bg-accent text-black p-3 rounded-full hover:bg-green-400 transition-colors"
       >
         <FaChevronLeft />
       </button>
       <button
         onClick={nextTestimonial}
-        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 bg-accent text-black p-3 rounded-full hover:bg-green-400 transition-colors"
+        className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 bg-accent text-black p-3 rounded-full hover:bg-green-400 transition-colors"
       >
         <FaChevronRight />
       </button>
